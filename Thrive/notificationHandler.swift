@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+// array of quotes
+// pick random
+// send one everyday at 8:00
+
