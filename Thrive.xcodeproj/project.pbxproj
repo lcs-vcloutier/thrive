@@ -57,11 +57,11 @@
 		2A5211A9270B9E8500B271DA /* Thrive */ = {
 			isa = PBXGroup;
 			children = (
+				2A5211BD270BA64F00B271DA /* notificationHandler.swift */,
 				2A5211AA270B9E8500B271DA /* ThriveApp.swift */,
 				2A5211BC270BA5D300B271DA /* Views */,
 				2A5211AE270B9E9800B271DA /* Assets.xcassets */,
 				2A5211B0270B9E9800B271DA /* Preview Content */,
-				2A5211BD270BA64F00B271DA /* notificationHandler.swift */,
 			);
 			path = Thrive;
 			sourceTree = "<group>";
