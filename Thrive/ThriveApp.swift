@@ -44,6 +44,3 @@ struct iOSApp: App {
 }
  
 
-// External Resource
-// Later LCAT - Mood Tracker - form - swiftui
-// Notification handler w/ list of quotes

@@ -13,6 +13,7 @@
 		2A5211B2270B9E9800B271DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */; };
 		2A5211B9270BA44C00B271DA /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211B8270BA44C00B271DA /* Resources.swift */; };
 		2A5211BB270BA47700B271DA /* MentalChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BA270BA47700B271DA /* MentalChecklist.swift */; };
+		2A5211BE270BA64F00B271DA /* notificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BD270BA64F00B271DA /* notificationHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A5211B8270BA44C00B271DA /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		2A5211BA270BA47700B271DA /* MentalChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalChecklist.swift; sourceTree = "<group>"; };
+		2A5211BD270BA64F00B271DA /* notificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2A5211BC270BA5D300B271DA /* Views */,
 				2A5211AE270B9E9800B271DA /* Assets.xcassets */,
 				2A5211B0270B9E9800B271DA /* Preview Content */,
+				2A5211BD270BA64F00B271DA /* notificationHandler.swift */,
 			);
 			path = Thrive;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				2A5211AD270B9E8500B271DA /* ContentView.swift in Sources */,
 				2A5211B9270BA44C00B271DA /* Resources.swift in Sources */,
 				2A5211AB270B9E8500B271DA /* ThriveApp.swift in Sources */,
+				2A5211BE270BA64F00B271DA /* notificationHandler.swift in Sources */,
 				2A5211BB270BA47700B271DA /* MentalChecklist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
