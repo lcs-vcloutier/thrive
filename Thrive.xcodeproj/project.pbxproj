@@ -56,9 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				2A5211AA270B9E8500B271DA /* ThriveApp.swift */,
-				2A5211AC270B9E8500B271DA /* ContentView.swift */,
-				2A5211B8270BA44C00B271DA /* Resources.swift */,
-				2A5211BA270BA47700B271DA /* MentalChecklist.swift */,
+				2A5211BC270BA5D300B271DA /* Views */,
 				2A5211AE270B9E9800B271DA /* Assets.xcassets */,
 				2A5211B0270B9E9800B271DA /* Preview Content */,
 			);
@@ -71,6 +69,16 @@
 				2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A5211BC270BA5D300B271DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A5211B8270BA44C00B271DA /* Resources.swift */,
+				2A5211BA270BA47700B271DA /* MentalChecklist.swift */,
+				2A5211AC270B9E8500B271DA /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
