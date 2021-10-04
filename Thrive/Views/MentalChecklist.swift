@@ -12,9 +12,5 @@ struct MentalChecklist: View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
-
-struct MentalChecklist_Previews: PreviewProvider {
-    static var previews: some View {
-        MentalChecklist()
-    }
-}
+// Button calculates and saves a score to user defaults - appends it to an array.
+// When you call it you'll use the key and display the array 

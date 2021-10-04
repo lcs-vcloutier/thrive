@@ -11,6 +11,9 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
+        // Explain what the app's about
+        // define thrive/jack chapter
+        // shoutout developers
     }
 }
 
