@@ -8,10 +8,42 @@
 import SwiftUI
 
 @main
-struct ThriveApp: App {
+struct iOSApp: App {
+
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                NavigationView {
+                    ContentView()
+                }
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text ("About")
+                    
+                }
+                
+                NavigationView {
+                    Resources()
+                }
+                .tabItem {
+                    Image(systemName: "info.circle.fill")
+                    Text ("Resources")
+                }
+                
+                NavigationView {
+                    MentalChecklist()
+                }
+                .tabItem {
+                    Image(systemName: "checklist")
+                    Text ("Checklist")
+                }
+            }
         }
     }
 }
+ 
+
+// External Resource
+// Later LCAT - Mood Tracker - form - swiftui
+// Notification handler w/ list of quotes

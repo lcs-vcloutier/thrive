@@ -11,6 +11,8 @@
 		2A5211AD270B9E8500B271DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211AC270B9E8500B271DA /* ContentView.swift */; };
 		2A5211AF270B9E9800B271DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211AE270B9E9800B271DA /* Assets.xcassets */; };
 		2A5211B2270B9E9800B271DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */; };
+		2A5211B9270BA44C00B271DA /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211B8270BA44C00B271DA /* Resources.swift */; };
+		2A5211BB270BA47700B271DA /* MentalChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BA270BA47700B271DA /* MentalChecklist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2A5211AC270B9E8500B271DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A5211AE270B9E9800B271DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A5211B8270BA44C00B271DA /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		2A5211BA270BA47700B271DA /* MentalChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalChecklist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				2A5211AA270B9E8500B271DA /* ThriveApp.swift */,
 				2A5211AC270B9E8500B271DA /* ContentView.swift */,
+				2A5211B8270BA44C00B271DA /* Resources.swift */,
+				2A5211BA270BA47700B271DA /* MentalChecklist.swift */,
 				2A5211AE270B9E9800B271DA /* Assets.xcassets */,
 				2A5211B0270B9E9800B271DA /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A5211AD270B9E8500B271DA /* ContentView.swift in Sources */,
+				2A5211B9270BA44C00B271DA /* Resources.swift in Sources */,
 				2A5211AB270B9E8500B271DA /* ThriveApp.swift in Sources */,
+				2A5211BB270BA47700B271DA /* MentalChecklist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
