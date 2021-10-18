@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct Resources: View {
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
-    // list of lcs people phone numbers & emails
-    // 3 mental health emails and numbers
+        List {
+            // Loop through static data
+            ForEach(Resource.staticData, id: \.name) { item in
+
+                GroupBox(
+                    label: Label(item.name, systemImage: item.imageName)
+                        .foregroundColor(.blue)
+                ) {
+                    VStack {
+                        Link(item.phoneNumber, destination: URL(string: item.formattedphoneNumber)!)
+                        Link(item.email, destination: URL(string: item.formattedEmail)!)
+                    }
+                    .font(.title)
+                    
+                }
+                
+            }
+        }
+        .navigationBarTitle("Resources")
     }
 }
 
