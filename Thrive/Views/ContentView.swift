@@ -15,7 +15,7 @@ struct ContentView: View {
             // TO DO: Explain what the app's about
             // TO DO: Explain THRIVE
             // TO DO: Explain Developers
-            Button("Would you like to recieve motivational quotes everyday?", action: setUpNotification)
+            Button("Would you like to receive motivational quotes everyday?", action: setUpNotification)
             
         }
         .task {
