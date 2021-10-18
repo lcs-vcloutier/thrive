@@ -59,6 +59,7 @@
 			children = (
 				2A5211AA270B9E8500B271DA /* ThriveApp.swift */,
 				2A5211BC270BA5D300B271DA /* Views */,
+				2AEE6677271E0BDA00C2B532 /* Model */,
 				2A5211AE270B9E9800B271DA /* Assets.xcassets */,
 				2A5211B0270B9E9800B271DA /* Preview Content */,
 			);
@@ -79,7 +80,6 @@
 				2A5211AC270B9E8500B271DA /* ContentView.swift */,
 				2A5211B8270BA44C00B271DA /* Resources.swift */,
 				2A5211BA270BA47700B271DA /* MentalChecklist.swift */,
-				2AEE6677271E0BDA00C2B532 /* Model */,
 			);
 			path = Views;
 			sourceTree = "<group>";
