@@ -7,26 +7,21 @@
 
 import SwiftUI
 
-struct Resources: View {
-
+struct ResourcesView: View {
     var body: some View {
-        
         List {
             // Loop through static data
             ForEach(Resource.staticData, id: \.name) { item in
-
-                GroupBox(
-                    label: Label(item.name, systemImage: item.imageName)
+                VStack(alignment: .leading){
+                    Label(item.name, systemImage: item.imageName)
                         .foregroundColor(.blue)
-                ) {
                     VStack {
                         Link(item.phoneNumber, destination: URL(string: item.formattedphoneNumber)!)
                         Link(item.email, destination: URL(string: item.formattedEmail)!)
                     }
+                    .foregroundColor(.black)
                     .font(.title)
-                    
                 }
-                
             }
         }
         .navigationBarTitle("Resources")

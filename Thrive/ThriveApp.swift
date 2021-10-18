@@ -24,7 +24,7 @@ struct iOSApp: App {
                 }
                 
                 NavigationView {
-                    Resources()
+                    ResourcesView()
                 }
                 .tabItem {
                     Image(systemName: "info.circle.fill")
@@ -32,7 +32,7 @@ struct iOSApp: App {
                 }
                 
                 NavigationView {
-                    MentalChecklist()
+                    MentalChecklistView()
                 }
                 .tabItem {
                     Image(systemName: "checklist")
