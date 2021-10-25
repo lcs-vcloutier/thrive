@@ -12,12 +12,12 @@ struct ResourcesView: View {
         List {
             // Loop through static data
             ForEach(Resource.staticData, id: \.name) { item in
-                VStack(alignment: .leading){
+                VStack(alignment: .leading) {
                     Label(item.name, systemImage: item.imageName)
                         .foregroundColor(.blue)
                     VStack {
-                        Link(item.phoneNumber, destination: URL(string: item.formattedphoneNumber)!)
-                        Link(item.email, destination: URL(string: item.formattedEmail)!)
+                        Text(item.formattedPhoneNumber)
+                        Text(item.formattedEmail)
                     }
                     .foregroundColor(.black)
                     .font(.title)
@@ -28,3 +28,8 @@ struct ResourcesView: View {
     }
 }
 
+struct ResourcesView_Previews: PreviewProvider {
+    static var previews: some View {
+        ResourcesView()
+    }
+}
