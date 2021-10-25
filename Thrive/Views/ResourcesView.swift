@@ -16,8 +16,8 @@ struct ResourcesView: View {
                     Label(item.name, systemImage: item.imageName)
                         .foregroundColor(.blue)
                     VStack {
-                        Text(item.formattedPhoneNumber)
-                        Text(item.formattedEmail)
+                        Text(makeAttributedString(with: item.formattedPhoneNumber))
+                        Text(makeAttributedString(with: item.formattedEmail))
                     }
                     .foregroundColor(.black)
                     .font(.title)
@@ -25,6 +25,9 @@ struct ResourcesView: View {
             }
         }
         .navigationBarTitle("Resources")
+    }
+    func makeAttributedString(with givenText: String) -> AttributedString {
+        return (try? AttributedString(markdown: givenText)) ?? AttributedString()
     }
 }
 
