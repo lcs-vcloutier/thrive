@@ -20,6 +20,7 @@ struct ContentView: View {
                         .font(.system(size: 32, weight: .semibold, design: .default))
                     Spacer()
                 }
+                .padding()
                 
                 Image("Thrive")
                     .resizable()
@@ -65,6 +66,7 @@ struct ContentView: View {
                         .font(.system(size: 32, weight: .semibold, design: .default))
                     Spacer()
                 }
+                .padding()
                 
                 Image("Thrive")
                     .resizable()
@@ -80,6 +82,7 @@ struct ContentView: View {
                     Text("Explain Developers")
                         .font(.system(size: 32, weight: .semibold, design: .default))
                 }
+                    .padding()
 
                 
                 // Add link to mental health at Lakefieldd
