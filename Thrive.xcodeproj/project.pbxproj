@@ -15,6 +15,7 @@
 		2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BA270BA47700B271DA /* MentalChecklistView.swift */; };
 		2A5211BE270BA64F00B271DA /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BD270BA64F00B271DA /* NotificationHandler.swift */; };
 		2AEE6679271E0D9000C2B532 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEE6678271E0D9000C2B532 /* Resource.swift */; };
+		9CB6CA54273084D200633F12 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6CA53273084D200633F12 /* ScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		2A5211BA270BA47700B271DA /* MentalChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalChecklistView.swift; sourceTree = "<group>"; };
 		2A5211BD270BA64F00B271DA /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		2AEE6678271E0D9000C2B532 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		9CB6CA53273084D200633F12 /* ScoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreViewModel.swift; path = ../../../Thrive/Thrive/Model/ScoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				2A5211BD270BA64F00B271DA /* NotificationHandler.swift */,
 				2AEE6678271E0D9000C2B532 /* Resource.swift */,
+				9CB6CA53273084D200633F12 /* ScoreViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				2AEE6679271E0D9000C2B532 /* Resource.swift in Sources */,
 				2A5211BE270BA64F00B271DA /* NotificationHandler.swift in Sources */,
 				2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */,
+				9CB6CA54273084D200633F12 /* ScoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
