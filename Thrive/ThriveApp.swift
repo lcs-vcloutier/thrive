@@ -32,7 +32,7 @@ struct iOSApp: App {
                 }
                 
                 NavigationView {
-                    MentalChecklistView()
+                    MentalChecklist()
                 }
                 .tabItem {
                     Image(systemName: "checklist")
