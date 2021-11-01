@@ -10,7 +10,6 @@ import UIKit
 
 class ScoreViewModel: ObservableObject {
     
-    // Something
     @Published var scores: [Int] = []
     
     static let initialScore = 0
