@@ -24,14 +24,6 @@ struct iOSApp: App {
                 }
                 
                 NavigationView {
-                    ResourcesView()
-                }
-                .tabItem {
-                    Image(systemName: "info.circle.fill")
-                    Text ("Resources")
-                }
-                
-                NavigationView {
                     MentalChecklist()
                 }
                 .tabItem {
