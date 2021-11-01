@@ -10,13 +10,16 @@ import UserNotifications
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            
-            // TO DO: Explain what the app's about
-            // TO DO: Explain THRIVE
-            // TO DO: Explain Developers
-            Button("Would you like to receive motivational quotes everyday?", action: setUpNotification)
-            
+        NavigationView{
+            VStack {
+                // TO DO: Explain what the app's about
+                // TO DO: Explain THRIVE
+                // TO DO: Explain Developers
+                
+                Button("Would you like to receive motivational quotes everyday?", action: setUpNotification)
+                Text("Hello World")
+            }
+            .navigationBarTitle("Title / Placeholder")
         }
         .task {
             askUserNotificationPermission()
