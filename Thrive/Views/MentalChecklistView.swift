@@ -11,14 +11,26 @@ struct MentalChecklist: View {
     
     @ObservedObject var scoreVM = ScoreViewModel()
     
-    
-    
+    @State private var questionStore = checkListQuestions()
+
     var body: some View {
         VStack {
             
-            GroupBox(label: Label("Heart Rate", systemImage: "heart.fill").foregroundColor(.red)) {
-                Text("Your heart rate")
-            }.padding()
+            ForEach(0..<questionStore.questions.count) { num in
+                    GroupBox(label: Label("Question", systemImage: "questionmark").foregroundColor(.red)) {
+                        Text("\(questionStore.questions[num].questionName)")
+                    }.padding()
+                    
+                    Picker("Yes or No", selection: $questionStore.questions[num].answerYes) {
+                        Text("Yes").tag(0)
+                        Text("No").tag(1)
+                    }.pickerStyle(.segmented).padding(.horizontal)
+                    
+                    
+                
+            }
+            
+            
             
             
             
