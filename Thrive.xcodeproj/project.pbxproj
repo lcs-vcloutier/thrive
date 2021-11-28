@@ -23,6 +23,7 @@
 		499BEE6A2753E17000C97DBD /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE562753DF9800C97DBD /* QuestionView.swift */; };
 		499BEE6B2753E17000C97DBD /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE572753DF9800C97DBD /* Checklist.swift */; };
 		499BEE6C2753E17000C97DBD /* SurveyEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE582753DF9800C97DBD /* SurveyEndView.swift */; };
+		499BEE6D2753E4C500C97DBD /* ChecklistQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7BA6274C4FA4008073CD /* ChecklistQuestion.swift */; };
 		9CB6CA5627308B7800633F12 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -238,6 +239,7 @@
 				499BEE6A2753E17000C97DBD /* QuestionView.swift in Sources */,
 				499BEE6B2753E17000C97DBD /* Checklist.swift in Sources */,
 				499BEE6C2753E17000C97DBD /* SurveyEndView.swift in Sources */,
+				499BEE6D2753E4C500C97DBD /* ChecklistQuestion.swift in Sources */,
 				2A5211AD270B9E8500B271DA /* ContentView.swift in Sources */,
 				499BEE5D2753DFF700C97DBD /* UserPersistenceController.swift in Sources */,
 				2A5211AB270B9E8500B271DA /* ThriveApp.swift in Sources */,
