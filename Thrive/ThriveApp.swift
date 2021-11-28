@@ -10,26 +10,24 @@ import SwiftUI
 @main
 struct iOSApp: App {
 
+    let persistenceController = PersistenceController.shared
+    
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-                NavigationView {
-                    ContentView()
-                }
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text ("About")
-                    
-                }
-                
-                NavigationView {
-                    MentalChecklist()
-                }
-                .tabItem {
-                    Image(systemName: "checklist")
-                    Text ("Checklist")
-                }
+            SceneManager(/*user: localUser.first*/)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }.onChange(of: scenePhase) { (newScenePhase) in
+            switch newScenePhase {
+                case .background:
+                    persistenceController.save()
+                case .inactive:
+                    return
+                case .active:
+                    return
+                @unknown default:
+                    return
             }
         }
     }
