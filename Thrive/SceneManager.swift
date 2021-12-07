@@ -36,6 +36,7 @@ struct SceneManager: View {
                     }
                 }
                 .ignoresSafeArea()
+                //UserCreationPopOut(userMutating: $user)
             }
             else {
                 UserCreationPopOut(userMutating: $user)

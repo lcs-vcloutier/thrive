@@ -12,7 +12,6 @@
 		2A5211AF270B9E9800B271DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211AE270B9E9800B271DA /* Assets.xcassets */; };
 		2A5211B2270B9E9800B271DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */; };
 		2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BA270BA47700B271DA /* MentalChecklistView.swift */; };
-		2A5211BE270BA64F00B271DA /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BD270BA64F00B271DA /* NotificationHandler.swift */; };
 		499BEE5D2753DFF700C97DBD /* UserPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE5C2753DFF700C97DBD /* UserPersistenceController.swift */; };
 		499BEE602753E02100C97DBD /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE5E2753E02100C97DBD /* UserData.xcdatamodeld */; };
 		499BEE632753E09700C97DBD /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE612753E09700C97DBD /* User+CoreDataClass.swift */; };
@@ -23,7 +22,10 @@
 		499BEE6A2753E17000C97DBD /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE562753DF9800C97DBD /* QuestionView.swift */; };
 		499BEE6B2753E17000C97DBD /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE572753DF9800C97DBD /* Checklist.swift */; };
 		499BEE6C2753E17000C97DBD /* SurveyEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE582753DF9800C97DBD /* SurveyEndView.swift */; };
-		499BEE6D2753E4C500C97DBD /* ChecklistQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7BA6274C4FA4008073CD /* ChecklistQuestion.swift */; };
+		499BEE6F2753E54400C97DBD /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE6E2753E54400C97DBD /* NotificationHandler.swift */; };
+		49FC6A5E275EB5A4004A63CB /* QuestionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */; };
+		49FDFAD427557AE50059DA32 /* OptionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFAD327557AE50059DA32 /* OptionalBinding.swift */; };
+		49FDFAD8275584600059DA32 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFAD7275584600059DA32 /* NumberField.swift */; };
 		9CB6CA5627308B7800633F12 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +36,6 @@
 		2A5211AE270B9E9800B271DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A5211BA270BA47700B271DA /* MentalChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalChecklistView.swift; sourceTree = "<group>"; };
-		2A5211BD270BA64F00B271DA /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		499BEE542753DF9800C97DBD /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		499BEE562753DF9800C97DBD /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		499BEE572753DF9800C97DBD /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
@@ -45,6 +46,10 @@
 		499BEE622753E09700C97DBD /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		499BEE652753E11D00C97DBD /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		499BEE672753E13300C97DBD /* UserCreationPopOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationPopOut.swift; sourceTree = "<group>"; };
+		499BEE6E2753E54400C97DBD /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHandler.swift; sourceTree = "<group>"; };
+		49FDFAD327557AE50059DA32 /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
+		49FDFAD7275584600059DA32 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		9C9D7BA6274C4FA4008073CD /* ChecklistQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChecklistQuestion.swift; path = ../../../Thrive/Thrive/Model/ChecklistQuestion.swift; sourceTree = "<group>"; };
 		9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +86,7 @@
 			children = (
 				2A5211AA270B9E8500B271DA /* ThriveApp.swift */,
 				499BEE652753E11D00C97DBD /* SceneManager.swift */,
+				49FDFAD227557ACD0059DA32 /* Helpers */,
 				2A5211BC270BA5D300B271DA /* Views */,
 				2AEE6677271E0BDA00C2B532 /* Model */,
 				2A5211AE270B9E9800B271DA /* Assets.xcassets */,
@@ -112,9 +118,9 @@
 			children = (
 				499BEE592753DFCB00C97DBD /* User */,
 				499BEE532753DF9800C97DBD /* Survey */,
-				2A5211BD270BA64F00B271DA /* NotificationHandler.swift */,
 				9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */,
 				9C9D7BA6274C4FA4008073CD /* ChecklistQuestion.swift */,
+				499BEE6E2753E54400C97DBD /* NotificationHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				499BEE542753DF9800C97DBD /* Survey.swift */,
+				49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */,
 				499BEE552753DF9800C97DBD /* Views */,
 			);
 			path = Survey;
@@ -163,6 +170,15 @@
 				499BEE622753E09700C97DBD /* User+CoreDataProperties.swift */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		49FDFAD227557ACD0059DA32 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49FDFAD327557AE50059DA32 /* OptionalBinding.swift */,
+				49FDFAD7275584600059DA32 /* NumberField.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,16 +251,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FC6A5E275EB5A4004A63CB /* QuestionHandler.swift in Sources */,
 				499BEE692753E17000C97DBD /* Survey.swift in Sources */,
+				49FDFAD427557AE50059DA32 /* OptionalBinding.swift in Sources */,
 				499BEE6A2753E17000C97DBD /* QuestionView.swift in Sources */,
 				499BEE6B2753E17000C97DBD /* Checklist.swift in Sources */,
 				499BEE6C2753E17000C97DBD /* SurveyEndView.swift in Sources */,
-				499BEE6D2753E4C500C97DBD /* ChecklistQuestion.swift in Sources */,
 				2A5211AD270B9E8500B271DA /* ContentView.swift in Sources */,
 				499BEE5D2753DFF700C97DBD /* UserPersistenceController.swift in Sources */,
 				2A5211AB270B9E8500B271DA /* ThriveApp.swift in Sources */,
-				2A5211BE270BA64F00B271DA /* NotificationHandler.swift in Sources */,
 				499BEE662753E11D00C97DBD /* SceneManager.swift in Sources */,
+				49FDFAD8275584600059DA32 /* NumberField.swift in Sources */,
+				499BEE6F2753E54400C97DBD /* NotificationHandler.swift in Sources */,
 				499BEE632753E09700C97DBD /* User+CoreDataClass.swift in Sources */,
 				2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */,
 				499BEE602753E02100C97DBD /* UserData.xcdatamodeld in Sources */,
@@ -381,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Thrive/Preview Content\"";
-				DEVELOPMENT_TEAM = GR8H7BN82Z;
+				DEVELOPMENT_TEAM = 6WTD6KAA94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -411,7 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Thrive/Preview Content\"";
-				DEVELOPMENT_TEAM = GR8H7BN82Z;
+				DEVELOPMENT_TEAM = 6WTD6KAA94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
