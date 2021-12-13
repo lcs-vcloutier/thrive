@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct UserCreationPopOut: View {
-    
-    @Environment(\.managedObjectContext) private var viewContext
-    @Binding var userMutating: User?
+
+    var user: UserViewModel
     
     @State var userName: String?
     @State var userSurname: String?
@@ -51,27 +50,15 @@ struct UserCreationPopOut: View {
                 .padding(.vertical, 7)
                 
                 Button("Create User") {
+                    let checkArray = [userName, userSurname, userAge, userGrade]
                     // Check that age is valid
-                    guard let finalAge = userAge else {
-                        feedback = "Please enter a valid age."
-                        return
+                    for i in checkArray {
+                        guard let _ = i else {
+                            feedback = "Please enter a valid age."
+                            return
+                        }
                     }
-                    let user = User(context: viewContext)
-                    user.name = "Efe"
-                    user.surname = "Yencilek"
-                    user.age = Int16(Int(finalAge)!)
-                    user.grade = "11"
-                    user.dayStreak = 0
-                    user.totalScore = 0
-                    user.lastTestDate = nil
-                    // Debug
-                    //print(user)
-                    do {
-                        try viewContext.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                    userMutating = user
+                    user.createUser(userName: userName!, userSurname: userSurname!, userAge: userAge!, userGrade: userGrade!)
                 }
                 .disabled(userName == nil || userSurname == nil || userAge == nil || userGrade == nil)
                 .padding(.vertical, 7)

@@ -9,11 +9,8 @@ import SwiftUI
 
 struct QuestionView: View {
     
-    // Callback function iterating to the next view
-    var callback: () -> ()
-    
     // Will be mutated by the checklist items
-    @State var response: String = ""
+    @Binding var response: String
     
     var displayQuestion: Question
 
@@ -28,17 +25,6 @@ struct QuestionView: View {
         ForEach((0...displayQuestion.answers.count - 1), id: \.self) { a in
             Checklist(selectionState: $response, text: displayQuestion.answers[a])
         }
-        
-        HStack(alignment: .bottom) {
-            Spacer()
-            Button("Next") {
-                if (response != "") {
-                    callback()
-                }
-            }
-            .foregroundColor((response != "") ? .blue : .gray)
-        }
-        .padding(.bottom, 50)
         
     }
     

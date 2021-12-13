@@ -8,21 +8,81 @@
 import Foundation
 
 class QuestionHandler {
-    let survey = Survey()
-    var qIndex: Int = 0
+    // User Object to Mutate
+    var user: UserViewModel
+    
+    // Survey for Questions
+    private let survey = Survey()
+    
+    // Index value to iterate
+    private var qIndex: Int = 0
+    
+    // Computed Value of Question
     var currentQuestion: Question {
         get {
             return survey.questions[qIndex]
         }
     }
     
+    private var surveyShouldEnd: Bool
+    // Is the first question
+    var isFirst: Bool {
+        get {
+            return qIndex == 0
+        }
+    }
+    // Is the last question
+    var isLast: Bool {
+        get {
+            return qIndex == survey.questions.count - 1
+        }
+    }
+    
+    // Check Survey Should End
+    private func returnSurveyEnded(_ comparedDate: Date?) -> Bool {
+        if comparedDate == nil {
+            return false
+        }
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: comparedDate!, to: Date.now)
+        return components.day == 0
+    }
+    
+    // Iterate to next question
+    private func nextIndex() {
+        qIndex += (self.isLast) ? 0 : 1
+    }
+    
+    // Iterate to previous question
+    private func previousIndex() {
+        qIndex -= (self.isFirst) ? 0 : 1
+    }
+    
+    func toIndex(_ index: Int) throws {
+        if index >= survey.questions.count || index < 0 {
+            throw SpecialErrors.IndexRange
+        }
+        qIndex = index
+    }
+    
+    // Switching Questions w/ Check
     func nextQuestion() {
-        qIndex += (qIndex >= survey.questions.count - 1) ? 0 : 1
+        if (!self.isLast) {
+            self.nextIndex()
+        } else {
+            self.surveyShouldEnd = true
+            self.user.updateUser()
+        }
     }
     
     func previousQuestion() {
-        qIndex -= (qIndex > 0) ? 1 : 0
+        self.previousQuestion()
     }
     
-    init(){}
+    init(user: UserViewModel) {
+        self.user = user
+        //self.surveyShouldEnd = self.returnSurveyEnded(user.lastTestDate)
+        self.surveyShouldEnd = false
+    }
 }
+// Create a class for handling user object

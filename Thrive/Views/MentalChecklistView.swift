@@ -9,69 +9,20 @@ import SwiftUI
 
 struct MentalChecklistView: View {
     
-    // Environment Object
-    @Environment(\.managedObjectContext) private var viewContext
-    
     // Core Data User Object
-    @State var user: User
+    var user: UserViewModel
     
-    // Survey Structure
-    let survey = Survey()
+    // Progression Handler
+    let questionHandler: QuestionHandler
+    @State var renderingQuestion: Question?
     
-    // Progression Variables
-    @State var qIndex: Int = 0
-    @State var surveyEnded: Bool
-    
-    // Compares the days and if different, returns falase
-    
-    static func returnSurveyEnded(_ comparedDate: Date?) -> Bool {
-        if comparedDate == nil {
-            return false
-        }
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: comparedDate!, to: Date.now)
-        return components.day == 0
-    }
-    
-    func updateUser() {
-        user.dayStreak += 1
-        // Increment of .25 with each day (beginning 1x and max 3x)
-        let effectiveStreak = (user.dayStreak - 2 > 0) ? user.dayStreak : 0
-        let multiplier = 1 + Int(0.25 * Double(effectiveStreak))
-        let clamped = (multiplier > 3) ? 3 : multiplier
-        user.totalScore += Int32(100 * clamped)
-        // Change the last test date to now
-        user.lastTestDate = Date.now
-
-        // Save Context
-        do {
-            try viewContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    // Iterating to the next stage
-    func iterateToNextQuestion() {
-        if (qIndex < survey.questions.count - 1) {
-            qIndex += 1
-        } else {
-            // You'll end the survey here and save user data
-            self.updateUser()
-            
-            // Debug
-            //print(user.dayStreak)
-            //print(user.totalScore)
-            //print(user.lastTestDate!)
-            
-            surveyEnded = true
-        }
-    }
+    // Survey Completion Check
+    @State var response: String = ""
     
     // Initializer - Compare dates to decide if survey has ended
-    init (user: User) {
+    init (user: UserViewModel) {
         self.user = user
-        self.surveyEnded = MentalChecklistView.returnSurveyEnded(user.lastTestDate)
+        self.questionHandler = QuestionHandler(user: user)
     }
     
     // View
@@ -80,10 +31,35 @@ struct MentalChecklistView: View {
             Spacer()
             
             VStack {
-                Spacer()
                 
-                if (!surveyEnded) {
-                    QuestionView(callback: self.iterateToNextQuestion, displayQuestion: survey.questions[qIndex])
+                if renderingQuestion != nil {
+                    QuestionView(response: $response, displayQuestion: questionHandler.currentQuestion)
+                    HStack(alignment: .bottom) {
+                        
+                        Button("Previous") {
+                            questionHandler.previousQuestion()
+                            renderingQuestion = questionHandler.currentQuestion
+                            response = ""
+                        }
+                        .foregroundColor((questionHandler.isFirst) ? .gray : .blue)
+                        .disabled(questionHandler.isFirst)
+                        .padding()
+                        
+                        Spacer()
+                        
+                        Button("Next") {
+                            if (response != "") {
+                                questionHandler.nextQuestion()
+                                renderingQuestion = questionHandler.currentQuestion
+                                response = ""
+                            }
+                        }
+                        .foregroundColor((response != "") ? .blue : .gray)
+                        .disabled(response == "")
+                        .padding()
+                        
+                    }
+                    .padding(.bottom, 50)
                 } else {
                     SurveyEndView(user: user)
                 }
@@ -95,5 +71,3 @@ struct MentalChecklistView: View {
         }
     }
 }
-// Button calculates and saves a score to user defaults - appends it to an array.
-// When you call it you'll use the key and display the array

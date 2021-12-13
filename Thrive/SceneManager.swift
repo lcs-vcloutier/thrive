@@ -10,13 +10,11 @@ import CoreData
 
 struct SceneManager: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    @State var user: User?
+    let userViewModel: UserViewModel
     
     var body: some View {
         ZStack {
-            if user != nil {
+            if userViewModel.user != nil {
                 TabView {
                     NavigationView {
                         ContentView()
@@ -28,7 +26,7 @@ struct SceneManager: View {
                     }
                     
                     NavigationView {
-                        MentalChecklistView(user: user!)
+                        MentalChecklistView(user: userViewModel)
                     }
                     .tabItem {
                         Image(systemName: "checklist")
@@ -39,19 +37,12 @@ struct SceneManager: View {
                 //UserCreationPopOut(userMutating: $user)
             }
             else {
-                UserCreationPopOut(userMutating: $user)
+                UserCreationPopOut(user: userViewModel)
             }
         }
         // Runs when the view first appears
         .task {
-            let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
-            
-            do {
-                let items = try managedObjectContext.fetch(fetchRequest)
-                user = items.first
-            } catch let error as NSError {
-                print("Error counting users: \(error.localizedDescription)")
-            }
+            userViewModel.fetchUser()
         }
     }
 }

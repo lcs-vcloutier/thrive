@@ -12,6 +12,7 @@
 		2A5211AF270B9E9800B271DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211AE270B9E9800B271DA /* Assets.xcassets */; };
 		2A5211B2270B9E9800B271DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */; };
 		2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BA270BA47700B271DA /* MentalChecklistView.swift */; };
+		493ED7D62766E3F90091357A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493ED7D52766E3F90091357A /* UserViewModel.swift */; };
 		499BEE5D2753DFF700C97DBD /* UserPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE5C2753DFF700C97DBD /* UserPersistenceController.swift */; };
 		499BEE602753E02100C97DBD /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE5E2753E02100C97DBD /* UserData.xcdatamodeld */; };
 		499BEE632753E09700C97DBD /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE612753E09700C97DBD /* User+CoreDataClass.swift */; };
@@ -24,6 +25,7 @@
 		499BEE6C2753E17000C97DBD /* SurveyEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE582753DF9800C97DBD /* SurveyEndView.swift */; };
 		499BEE6F2753E54400C97DBD /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE6E2753E54400C97DBD /* NotificationHandler.swift */; };
 		49FC6A5E275EB5A4004A63CB /* QuestionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */; };
+		49FC6A62275EF9D0004A63CB /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC6A61275EF9D0004A63CB /* ErrorEnum.swift */; };
 		49FDFAD427557AE50059DA32 /* OptionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFAD327557AE50059DA32 /* OptionalBinding.swift */; };
 		49FDFAD8275584600059DA32 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFAD7275584600059DA32 /* NumberField.swift */; };
 		9CB6CA5627308B7800633F12 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */; };
@@ -36,6 +38,7 @@
 		2A5211AE270B9E9800B271DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A5211BA270BA47700B271DA /* MentalChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalChecklistView.swift; sourceTree = "<group>"; };
+		493ED7D52766E3F90091357A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		499BEE542753DF9800C97DBD /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		499BEE562753DF9800C97DBD /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		499BEE572753DF9800C97DBD /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		499BEE672753E13300C97DBD /* UserCreationPopOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationPopOut.swift; sourceTree = "<group>"; };
 		499BEE6E2753E54400C97DBD /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHandler.swift; sourceTree = "<group>"; };
+		49FC6A61275EF9D0004A63CB /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		49FDFAD327557AE50059DA32 /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
 		49FDFAD7275584600059DA32 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		9C9D7BA6274C4FA4008073CD /* ChecklistQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChecklistQuestion.swift; path = ../../../Thrive/Thrive/Model/ChecklistQuestion.swift; sourceTree = "<group>"; };
@@ -125,6 +129,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		493ED7D42766E3D80091357A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				493ED7D52766E3F90091357A /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		499BEE532753DF9800C97DBD /* Survey */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +160,7 @@
 		499BEE592753DFCB00C97DBD /* User */ = {
 			isa = PBXGroup;
 			children = (
+				493ED7D42766E3D80091357A /* ViewModel */,
 				499BEE5B2753DFDC00C97DBD /* Data Model */,
 				499BEE5A2753DFD300C97DBD /* Persistence Controller */,
 			);
@@ -177,6 +190,7 @@
 			children = (
 				49FDFAD327557AE50059DA32 /* OptionalBinding.swift */,
 				49FDFAD7275584600059DA32 /* NumberField.swift */,
+				49FC6A61275EF9D0004A63CB /* ErrorEnum.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -264,8 +278,10 @@
 				49FDFAD8275584600059DA32 /* NumberField.swift in Sources */,
 				499BEE6F2753E54400C97DBD /* NotificationHandler.swift in Sources */,
 				499BEE632753E09700C97DBD /* User+CoreDataClass.swift in Sources */,
+				493ED7D62766E3F90091357A /* UserViewModel.swift in Sources */,
 				2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */,
 				499BEE602753E02100C97DBD /* UserData.xcdatamodeld in Sources */,
+				49FC6A62275EF9D0004A63CB /* ErrorEnum.swift in Sources */,
 				499BEE642753E09700C97DBD /* User+CoreDataProperties.swift in Sources */,
 				499BEE682753E13300C97DBD /* UserCreationPopOut.swift in Sources */,
 				9CB6CA5627308B7800633F12 /* ScoreViewModel.swift in Sources */,

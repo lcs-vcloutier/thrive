@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SurveyEndView: View {
     
-    @ObservedObject var user: User
+    var user: UserViewModel
     
     // Design the Survey End View
     var body: some View {
@@ -17,8 +17,9 @@ struct SurveyEndView: View {
             Spacer()
             
             VStack {
-                Text(user.name)
-                Text(user.surname)
+                Text(user.user!.name)
+                Text(user.user!.surname)
+                Text("\(user.user!.dayStreak)")
                 Text("Survey Ended, Thx 4 Participating.")
             }
             .task {
