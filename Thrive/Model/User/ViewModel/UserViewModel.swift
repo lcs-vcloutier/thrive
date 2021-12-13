@@ -28,11 +28,8 @@ class UserViewModel {
         
         self.user = user
         
-        do {
-            try self.persistenceController.container.viewContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+        // Save Context
+        self.save()
     }
     
     // Update user
@@ -47,11 +44,7 @@ class UserViewModel {
         user!.lastTestDate = Date.now
 
         // Save Context
-        do {
-            try persistenceController.container.viewContext.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+        self.save()
     }
     
     func fetchUser() {
@@ -68,6 +61,15 @@ class UserViewModel {
             self.user = try (context.fetch(fetchRequest).first as? User)
         } catch {
             self.user = nil
+        }
+    }
+    
+    private func save() {
+        do {
+            try self.persistenceController.container.viewContext.save()
+        } catch {
+            persistenceController.container.viewContext.rollback()
+            print(error.localizedDescription)
         }
     }
     

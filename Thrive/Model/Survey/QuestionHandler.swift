@@ -18,13 +18,14 @@ class QuestionHandler {
     private var qIndex: Int = 0
     
     // Computed Value of Question
-    var currentQuestion: Question {
+    var currentQuestion: Question? {
         get {
-            return survey.questions[qIndex]
+            return (!surveyShouldEnd) ? survey.questions[qIndex] : nil
         }
     }
     
     private var surveyShouldEnd: Bool
+    
     // Is the first question
     var isFirst: Bool {
         get {
@@ -39,7 +40,7 @@ class QuestionHandler {
     }
     
     // Check Survey Should End
-    private func returnSurveyEnded(_ comparedDate: Date?) -> Bool {
+    static func returnSurveyEnded(_ comparedDate: Date?) -> Bool {
         if comparedDate == nil {
             return false
         }
@@ -76,13 +77,14 @@ class QuestionHandler {
     }
     
     func previousQuestion() {
-        self.previousQuestion()
+        if (!self.isFirst) {
+            self.previousIndex()
+        }
     }
     
     init(user: UserViewModel) {
         self.user = user
-        //self.surveyShouldEnd = self.returnSurveyEnded(user.lastTestDate)
-        self.surveyShouldEnd = false
+        self.surveyShouldEnd = QuestionHandler.returnSurveyEnded(user.user?.lastTestDate)
     }
 }
 // Create a class for handling user object

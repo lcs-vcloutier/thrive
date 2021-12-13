@@ -33,7 +33,7 @@ struct MentalChecklistView: View {
             VStack {
                 
                 if renderingQuestion != nil {
-                    QuestionView(response: $response, displayQuestion: questionHandler.currentQuestion)
+                    QuestionView(response: $response, displayQuestion: questionHandler.currentQuestion!)
                     HStack(alignment: .bottom) {
                         
                         Button("Previous") {
@@ -65,6 +65,8 @@ struct MentalChecklistView: View {
                 }
                 
                 Spacer()
+            }.task {
+                renderingQuestion = questionHandler.currentQuestion
             }
             
             Spacer()
