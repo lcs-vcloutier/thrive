@@ -15,13 +15,13 @@ class UserViewModel: ObservableObject {
     @Published var user: User?
     
     //MARK: Create User
-    func createUser(userName: String, userSurname: String, userAge: String, userGrade: String) {
+    func createUser(userName: String, userSurname: String, userAge: Int, userGrade: String) {
         
         let user = User(context: self.persistenceController.container.viewContext)
         
         user.name = userName
         user.surname = userSurname
-        user.age = Int16(Int(userAge)!)
+        user.age = Int16(userAge)
         user.grade = userGrade
         user.dayStreak = 0
         user.totalScore = 0

@@ -21,6 +21,8 @@ struct UserCreationPopOut: View {
     // Binding showing value to dismiss the screen
     @Binding var showing: Bool
     
+    @State var feedback: String = ""
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -51,7 +53,15 @@ struct UserCreationPopOut: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Save") {
-                        user.createUser(userName: userName, userSurname: userSurname, userAge: userAge, userGrade: userGrade.rawValue)
+                        // Try to turn userAge into an int, if not possible throw a feedback message
+                        // Use guard let and pass in the integer value as a parameter instead
+                        
+                        guard let userAgeInt = Int(userAge) else {
+                                feedback = "Please provide a valid age."
+                                return
+                        }
+                        
+                        user.createUser(userName: userName, userSurname: userSurname, userAge: userAgeInt, userGrade: userGrade.rawValue)
                         
                         showing.toggle()
                     }
