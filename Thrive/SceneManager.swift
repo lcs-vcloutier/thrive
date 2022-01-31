@@ -10,39 +10,40 @@ import CoreData
 
 struct SceneManager: View {
     
-    let userViewModel: UserViewModel
+    @ObservedObject var userViewModel: UserViewModel
+    
+    // To control the pop-out view
+    @State var showingCreateUser: Bool = false
     
     var body: some View {
         ZStack {
-            if userViewModel.user != nil {
-                TabView {
-                    NavigationView {
-                        ContentView()
-                    }
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text ("About")
-                        
-                    }
-                    
-                    NavigationView {
-                        MentalChecklistView(user: userViewModel)
-                    }
-                    .tabItem {
-                        Image(systemName: "checklist")
-                        Text ("Checklist")
-                    }
+            TabView {
+                NavigationView {
+                    ContentView()
                 }
-                .ignoresSafeArea()
-                //UserCreationPopOut(userMutating: $user)
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text ("About")
+                    
+                }
+                
+                NavigationView {
+                    MentalChecklistView(user: userViewModel)
+                }
+                .tabItem {
+                    Image(systemName: "checklist")
+                    Text ("Checklist")
+                }
             }
-            else {
-                UserCreationPopOut(user: userViewModel)
-            }
+            .ignoresSafeArea()
         }
         // Runs when the view first appears
         .task {
             userViewModel.fetchUser()
+            showingCreateUser = (userViewModel.user == nil)
+        }
+        .sheet(isPresented: $showingCreateUser) {
+            UserCreationPopOut(user: userViewModel, showing: $showingCreateUser)
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuestionHandler {
+class QuestionHandler: ObservableObject {
     // User Object to Mutate
     var user: UserViewModel
     
@@ -15,7 +15,7 @@ class QuestionHandler {
     private let survey = Survey()
     
     // Index value to iterate
-    private var qIndex: Int = 0
+    @Published private var qIndex: Int = 0
     
     // Computed Value of Question
     var currentQuestion: Question? {

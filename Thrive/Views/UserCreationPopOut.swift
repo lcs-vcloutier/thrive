@@ -9,68 +9,57 @@ import SwiftUI
 
 struct UserCreationPopOut: View {
 
-    var user: UserViewModel
+    // View Model to create user
+    @ObservedObject var user: UserViewModel
     
-    @State var userName: String?
-    @State var userSurname: String?
-    @State var userAge: String?
-    @State var userGrade: String?
+    // User inputs to create user
+    @State var userName: String = ""
+    @State var userSurname: String = ""
+    @State var userAge: String = ""
+    @State var userGrade: Grade = .nine
     
-    @State var feedback = ""
+    // Binding showing value to dismiss the screen
+    @Binding var showing: Bool
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Color.black
-                .opacity(0.3)
-                .ignoresSafeArea()
-            
+        NavigationView {
             VStack {
-                
-                HStack {
-                    TextField("Name", text: $userName.bound)
-                        .padding(.horizontal, 10)
-                        .border(.blue, width: 2)
-                        .cornerRadius(0.35)
-                    TextField("Surname", text: $userSurname.bound)
-                        .padding(.horizontal, 10)
-                        .border(.blue, width: 2)
-                        .cornerRadius(0.35)
-
-                }
-                .padding(.vertical, 7)
-                
-                TextField("Surname", text: $userAge.bound)
-                    .keyboardType(.numberPad)
-                
-                Picker("Grade", selection: $userGrade.bound) {
-                    ForEach(9 ..< 13) {
-                        Text("\($0)th Grade")
+                Form {
+                    HStack {
+                        TextField("Name", text: $userName)
+                        TextField("Surname", text: $userSurname)
                     }
-                }
-                .padding(.vertical, 7)
-                
-                Button("Create User") {
-                    let checkArray = [userName, userSurname, userAge, userGrade]
-                    // Check that age is valid
-                    for i in checkArray {
-                        guard let _ = i else {
-                            feedback = "Please enter a valid age."
-                            return
-                        }
+                    
+                    TextField("Age", text: $userAge)
+                        .keyboardType(.numberPad)
+                    Picker("Grade", selection: $userGrade) {
+                        Text(Grade.nine.rawValue).tag(Grade.nine)
+                        Text(Grade.ten.rawValue).tag(Grade.ten)
+                        Text(Grade.eleven.rawValue).tag(Grade.eleven)
+                        Text(Grade.twelve.rawValue).tag(Grade.twelve)
                     }
-                    user.createUser(userName: userName!, userSurname: userSurname!, userAge: userAge!, userGrade: userGrade!)
+                    .pickerStyle(SegmentedPickerStyle())
+                    
                 }
-                .disabled(userName == nil || userSurname == nil || userAge == nil || userGrade == nil)
-                .padding(.vertical, 7)
             }
-            .padding(30)
-            .frame(height: 500)
-            .frame(maxWidth: .infinity)
-            .background(Color.white)
-            .transition(.move(edge: .bottom))
+            .navigationTitle("Create User")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        showing.toggle()
+                    }
+                }
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Save") {
+                        user.createUser(userName: userName, userSurname: userSurname, userAge: userAge, userGrade: userGrade.rawValue)
+                        
+                        showing.toggle()
+                    }
+                    .disabled(userName.isEmpty || userSurname.isEmpty || userAge.isEmpty)
+                }
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        .ignoresSafeArea()
+        .interactiveDismissDisabled()
     }
 }
 

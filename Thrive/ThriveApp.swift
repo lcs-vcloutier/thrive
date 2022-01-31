@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct iOSApp: App {
     
-    var userViewModel = UserViewModel()
+    @StateObject var userViewModel = UserViewModel()
     
     var body: some Scene {
         WindowGroup {

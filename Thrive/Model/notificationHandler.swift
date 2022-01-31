@@ -1,8 +1,8 @@
 //
-//  NotificationHandler.swift
+//  notificationHandler.swift
 //  Thrive
 //
-//  Created by Efe Yencilek on 2021-11-28.
+//  Created by Vincent Cloutier on 2021-10-04.
 //
 
 import Foundation

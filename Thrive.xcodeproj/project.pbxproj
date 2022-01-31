@@ -13,6 +13,7 @@
 		2A5211B2270B9E9800B271DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */; };
 		2A5211BB270BA47700B271DA /* MentalChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5211BA270BA47700B271DA /* MentalChecklistView.swift */; };
 		493ED7D62766E3F90091357A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493ED7D52766E3F90091357A /* UserViewModel.swift */; };
+		4989AAEE27A8870B00973B6B /* GradeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989AAED27A8870B00973B6B /* GradeEnum.swift */; };
 		499BEE5D2753DFF700C97DBD /* UserPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE5C2753DFF700C97DBD /* UserPersistenceController.swift */; };
 		499BEE602753E02100C97DBD /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE5E2753E02100C97DBD /* UserData.xcdatamodeld */; };
 		499BEE632753E09700C97DBD /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE612753E09700C97DBD /* User+CoreDataClass.swift */; };
@@ -39,6 +40,7 @@
 		2A5211B1270B9E9800B271DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A5211BA270BA47700B271DA /* MentalChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalChecklistView.swift; sourceTree = "<group>"; };
 		493ED7D52766E3F90091357A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		4989AAED27A8870B00973B6B /* GradeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeEnum.swift; sourceTree = "<group>"; };
 		499BEE542753DF9800C97DBD /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		499BEE562753DF9800C97DBD /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		499BEE572753DF9800C97DBD /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		2AEE6677271E0BDA00C2B532 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4989AAEC27A886F200973B6B /* GradeEnum */,
 				499BEE592753DFCB00C97DBD /* User */,
 				499BEE532753DF9800C97DBD /* Survey */,
 				9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */,
@@ -137,11 +140,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4989AAEC27A886F200973B6B /* GradeEnum */ = {
+			isa = PBXGroup;
+			children = (
+				4989AAED27A8870B00973B6B /* GradeEnum.swift */,
+			);
+			path = GradeEnum;
+			sourceTree = "<group>";
+		};
 		499BEE532753DF9800C97DBD /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				499BEE542753DF9800C97DBD /* Survey.swift */,
-				49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */,
+				49C4F47D279F56F700DFCECE /* Model */,
+				49C4F47C279F56E300DFCECE /* ViewModel */,
 				499BEE552753DF9800C97DBD /* Views */,
 			);
 			path = Survey;
@@ -183,6 +194,22 @@
 				499BEE622753E09700C97DBD /* User+CoreDataProperties.swift */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		49C4F47C279F56E300DFCECE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		49C4F47D279F56F700DFCECE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				499BEE542753DF9800C97DBD /* Survey.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		49FDFAD227557ACD0059DA32 /* Helpers */ = {
@@ -274,6 +301,7 @@
 				2A5211AD270B9E8500B271DA /* ContentView.swift in Sources */,
 				499BEE5D2753DFF700C97DBD /* UserPersistenceController.swift in Sources */,
 				2A5211AB270B9E8500B271DA /* ThriveApp.swift in Sources */,
+				4989AAEE27A8870B00973B6B /* GradeEnum.swift in Sources */,
 				499BEE662753E11D00C97DBD /* SceneManager.swift in Sources */,
 				49FDFAD8275584600059DA32 /* NumberField.swift in Sources */,
 				499BEE6F2753E54400C97DBD /* NotificationHandler.swift in Sources */,

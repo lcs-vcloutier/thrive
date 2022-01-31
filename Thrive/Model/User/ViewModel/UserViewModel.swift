@@ -8,31 +8,33 @@
 import Foundation
 import CoreData
 
-class UserViewModel {
+class UserViewModel: ObservableObject {
     
     let persistenceController = PersistenceController.shared
     
-    var user: User?
+    @Published var user: User?
     
+    //MARK: Create User
     func createUser(userName: String, userSurname: String, userAge: String, userGrade: String) {
         
         let user = User(context: self.persistenceController.container.viewContext)
         
-        self.user!.name = "Efe"
-        self.user!.surname = "Yencilek"
-        self.user!.age = Int16(Int(userAge)!)
-        self.user!.grade = "11"
-        self.user!.dayStreak = 0
-        self.user!.totalScore = 0
-        self.user!.lastTestDate = nil
+        user.name = userName
+        user.surname = userSurname
+        user.age = Int16(Int(userAge)!)
+        user.grade = userGrade
+        user.dayStreak = 0
+        user.totalScore = 0
+        user.lastTestDate = nil
         
         self.user = user
         
+        print("User Created.")
         // Save Context
         self.save()
     }
     
-    // Update user
+    //MARK: Update User
     func updateUser() {
         user?.dayStreak += 1
         // Increment of .25 with each day (beginning 1x and max 3x)
@@ -47,6 +49,7 @@ class UserViewModel {
         self.save()
     }
     
+    //MARK: Fetch Existing User Data
     func fetchUser() {
         // Configure a fetch request to fetch at most 1 result
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -64,7 +67,8 @@ class UserViewModel {
         }
     }
     
-    private func save() {
+    //MARK: Save Context
+    private func save(/*_ completion: () -> Void*/) {
         do {
             try self.persistenceController.container.viewContext.save()
         } catch {
@@ -73,6 +77,7 @@ class UserViewModel {
         }
     }
     
+    //MARK: Initializer
     init() {
         self.fetchUser()
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MentalChecklistView: View {
     
     // Core Data User Object
-    var user: UserViewModel
+    @ObservedObject var user: UserViewModel
     
     // Progression Handler
     let questionHandler: QuestionHandler
