@@ -28,6 +28,7 @@ struct MentalChecklistView: View {
     // View
     var body: some View {
         HStack {
+            
             Spacer()
             
             VStack {
@@ -37,9 +38,7 @@ struct MentalChecklistView: View {
                     HStack(alignment: .bottom) {
                         
                         Button("Previous") {
-                            questionHandler.previousQuestion()
-                            renderingQuestion = questionHandler.currentQuestion
-                            response = ""
+                            changeQuestion(isNext: false)
                         }
                         .foregroundColor((questionHandler.isFirst) ? .gray : .blue)
                         .disabled(questionHandler.isFirst)
@@ -49,9 +48,7 @@ struct MentalChecklistView: View {
                         
                         Button("Next") {
                             if (response != "") {
-                                questionHandler.nextQuestion()
-                                renderingQuestion = questionHandler.currentQuestion
-                                response = ""
+                                changeQuestion()
                             }
                         }
                         .foregroundColor((response != "") ? .blue : .gray)
@@ -71,5 +68,16 @@ struct MentalChecklistView: View {
             
             Spacer()
         }
+    }
+    
+    //MARK: Iterate Through Questions
+    func changeQuestion(isNext: Bool = true) {
+        if isNext {
+            questionHandler.nextQuestion()
+        } else {
+            questionHandler.previousQuestion()
+        }
+        renderingQuestion = questionHandler.currentQuestion
+        response = ""
     }
 }
