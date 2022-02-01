@@ -27,7 +27,6 @@
 		499BEE6F2753E54400C97DBD /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEE6E2753E54400C97DBD /* NotificationHandler.swift */; };
 		49FC6A5E275EB5A4004A63CB /* QuestionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */; };
 		49FC6A62275EF9D0004A63CB /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC6A61275EF9D0004A63CB /* ErrorEnum.swift */; };
-		49FDFAD427557AE50059DA32 /* OptionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFAD327557AE50059DA32 /* OptionalBinding.swift */; };
 		49FDFAD8275584600059DA32 /* NumberField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FDFAD7275584600059DA32 /* NumberField.swift */; };
 		9CB6CA5627308B7800633F12 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +53,6 @@
 		499BEE6E2753E54400C97DBD /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		49FC6A5D275EB5A4004A63CB /* QuestionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHandler.swift; sourceTree = "<group>"; };
 		49FC6A61275EF9D0004A63CB /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
-		49FDFAD327557AE50059DA32 /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
 		49FDFAD7275584600059DA32 /* NumberField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberField.swift; sourceTree = "<group>"; };
 		9C9D7BA6274C4FA4008073CD /* ChecklistQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChecklistQuestion.swift; path = ../../../Thrive/Thrive/Model/ChecklistQuestion.swift; sourceTree = "<group>"; };
 		9CB6CA5527308B7800633F12 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		49FDFAD227557ACD0059DA32 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				49FDFAD327557AE50059DA32 /* OptionalBinding.swift */,
 				49FDFAD7275584600059DA32 /* NumberField.swift */,
 				49FC6A61275EF9D0004A63CB /* ErrorEnum.swift */,
 			);
@@ -294,7 +291,6 @@
 			files = (
 				49FC6A5E275EB5A4004A63CB /* QuestionHandler.swift in Sources */,
 				499BEE692753E17000C97DBD /* Survey.swift in Sources */,
-				49FDFAD427557AE50059DA32 /* OptionalBinding.swift in Sources */,
 				499BEE6A2753E17000C97DBD /* QuestionView.swift in Sources */,
 				499BEE6B2753E17000C97DBD /* Checklist.swift in Sources */,
 				499BEE6C2753E17000C97DBD /* SurveyEndView.swift in Sources */,
