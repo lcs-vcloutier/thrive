@@ -15,7 +15,7 @@ class UserViewModel: ObservableObject {
     @Published var user: User?
     
     //MARK: Create User
-    func createUser(userName: String, userSurname: String, userAge: Int, userGrade: String) {
+    func createUser(userName: String, userSurname: String, userAge: Int, userGrade: String,_ completion: @escaping (() -> Void)) {
         
         let user = User(context: self.persistenceController.container.viewContext)
         
@@ -31,7 +31,9 @@ class UserViewModel: ObservableObject {
         
         print("User Created.")
         // Save Context
-        self.save()
+        self.save() {
+            completion()
+        }
     }
     
     //MARK: Update User
@@ -68,9 +70,12 @@ class UserViewModel: ObservableObject {
     }
     
     //MARK: Save Context
-    private func save(/*_ completion: () -> Void*/) {
+    private func save(_ completion: (() -> Void)? = nil) {
         do {
             try self.persistenceController.container.viewContext.save()
+            if completion != nil {
+                completion!()
+            }
         } catch {
             persistenceController.container.viewContext.rollback()
             print(error.localizedDescription)

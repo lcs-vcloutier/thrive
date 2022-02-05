@@ -61,9 +61,9 @@ struct UserCreationPopOut: View {
                                 return
                         }
                         
-                        user.createUser(userName: userName, userSurname: userSurname, userAge: userAgeInt, userGrade: userGrade.rawValue)
-                        
-                        showing.toggle()
+                        user.createUser(userName: userName, userSurname: userSurname, userAge: userAgeInt, userGrade: userGrade.rawValue) {
+                            showing.toggle()
+                        }
                     }
                     .disabled(userName.isEmpty || userSurname.isEmpty || userAge.isEmpty)
                 }

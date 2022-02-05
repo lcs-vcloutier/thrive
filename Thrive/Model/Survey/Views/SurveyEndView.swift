@@ -22,10 +22,6 @@ struct SurveyEndView: View {
                 Text("\(user.user!.dayStreak)")
                 Text("Survey Ended, Thx 4 Participating.")
             }
-            .task {
-                // Here you'll save the score to the CoreData User object and re-fetch it for display.
-                
-            }
             
             Spacer()
         }
