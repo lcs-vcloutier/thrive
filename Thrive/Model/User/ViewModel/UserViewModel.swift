@@ -38,12 +38,26 @@ class UserViewModel: ObservableObject {
     
     //MARK: Update User
     func updateUser() {
-        user?.dayStreak += 1
+        // Return from the function if there's no user object
+        if user == nil {
+            return
+        }
+        
+        // Update the dayStreak depending on consecutive days of the survey being completed
+        if user!.lastTestDate != nil {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.day], from: (user!.lastTestDate)!, to: Date.now)
+            user!.dayStreak = (components.day! >= 2) ? 0 : user!.dayStreak + 1
+        } else {
+            user!.dayStreak += 1
+        }
+        
         // Increment of .25 with each day (beginning 1x and max 3x)
         let effectiveStreak = (user!.dayStreak - 2 > 0) ? user!.dayStreak : 0
         let multiplier = 1 + Int(0.25 * Double(effectiveStreak))
         let clamped = (multiplier > 3) ? 3 : multiplier
         user!.totalScore += Int32(100 * clamped)
+        
         // Change the last test date to now
         user!.lastTestDate = Date.now
 
